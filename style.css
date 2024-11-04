@@ -55,6 +55,20 @@ hr {
     }
 }
 /*----EXO2----*/
+/* Définir les classes de colonnes de 1 à 12 */
+.col-1  { flex: 0 0 calc(100% / 12 * 1); max-width: calc(100% / 12 * 1); }
+.col-2  { flex: 0 0 calc(100% / 12 * 2); max-width: calc(100% / 12 * 2); }
+.col-3  { flex: 0 0 calc(100% / 12 * 3); max-width: calc(100% / 12 * 3); }
+.col-4  { flex: 0 0 calc(100% / 12 * 4); max-width: calc(100% / 12 * 4); }
+.col-5  { flex: 0 0 calc(100% / 12 * 5); max-width: calc(100% / 12 * 5); }
+.col-6  { flex: 0 0 calc(100% / 12 * 6); max-width: calc(100% / 12 * 6); }
+.col-7  { flex: 0 0 calc(100% / 12 * 7); max-width: calc(100% / 12 * 7); }
+.col-8  { flex: 0 0 calc(100% / 12 * 8); max-width: calc(100% / 12 * 8); }
+.col-9  { flex: 0 0 calc(100% / 12 * 9); max-width: calc(100% / 12 * 9); }
+.col-10 { flex: 0 0 calc(100% / 12 * 10); max-width: calc(100% / 12 * 10); }
+.col-11 { flex: 0 0 calc(100% / 12 * 11); max-width: calc(100% / 12 * 11); }
+.col-12 { flex: 0 0 calc(100% / 12 * 12); max-width: calc(100% / 12 * 12); }
+
 .header{
     display: flex;
     justify-content: center;
@@ -93,3 +107,64 @@ article{
     height: 400px;
     margin: 2%;
 }
+.row2 {
+    display: flex;
+    flex-wrap: wrap; /* Les colonnes iront à la ligne si elles dépassent la largeur disponible */
+    width: 100%;     /* Prendre toute la largeur de son container */
+   justify-content: center;
+}
+.container {
+    width: 100%;
+    max-width: 1200px; /* Taille maximum pour les grands écrans */
+    margin: 0 auto;    /* Centrer le contenu */
+    padding: 0 15px;   /* Ajouter un padding pour éviter que le contenu touche les bords */
+}
+
+/* Colonnes - par défaut, chaque colonne prend 100% pour un empilement vertical */
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+/* Colonnes responsives */
+@media screen and (min-width:375px) {
+    /*375 taille d'un phone mini*/
+    .nav{
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) {
+    /* Pour écrans de taille moyenne (min-width=768px) : chaque colonne prend 50% */
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .hamburger{
+        display: none;
+    }
+    .nav{
+        display: flex;
+    }
+}
+@media screen and (min-width: 992px) {
+    /* Pour écrans larges (992px) : chaque colonne prend 33.33%  */
+    .col-lg-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+    .hamburger{
+        display: none;
+    }
+    .nav{
+        display: flex;
+    }
+}
+@media screen and (min-width:1024px){
+        /* Pour écrans larges (desktop) les 3 div s'alligne  */
+    .row2 {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+}
+
+
